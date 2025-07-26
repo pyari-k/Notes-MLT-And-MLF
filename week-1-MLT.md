@@ -22,9 +22,10 @@ That way, the point of projection is cW, where c is the coefficient and W is the
 Then, the projection of x can be calcuated as: $(\frac{x \cdot w}{|w|^2}) \cdot w$
 
 ## Error:
-$ error = x_{i} - projection(x)
+$error = x_{i} - projection(x)$ 
 
 ## Minimising the error
-Minimising the error is found to be equivalent to maximising $W \cdot C \cdot W^T such $|w| = 1$
+Minimising the error is found to be equivalent to maximising $W \cdot C \cdot W^T such $|w| = 1$ 
 
-It is also found that W is the eigen vector corresponding to the largest eigen value of the covariance matrix  
+
+It is also found that W is maximised when W is the eigen vector corresponding to the largest eigen value of the covariance matrix
