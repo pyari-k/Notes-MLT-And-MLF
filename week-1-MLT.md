@@ -39,3 +39,5 @@ Then, the project of x can be calcuated as:
 $$
 \frac{a}{b}
 $$
+
+end of documentation
