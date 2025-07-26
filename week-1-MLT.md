@@ -19,10 +19,5 @@ If one or more of the points, say x, do not fall on the line, the point can be p
 
 That way, the point of projection is cW, where c is the coefficient and W is the vector or line on which the point, x is projected. 
 
-Then, the project of x can be calcuated as:
+Then, the project of x can be calcuated as: $\frac{a}{b}$
 
-$$
-\frac{a}{b}
-$$
-
-hello 
