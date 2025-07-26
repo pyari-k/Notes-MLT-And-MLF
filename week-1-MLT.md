@@ -21,21 +21,8 @@ That way, the point of projection is cW, where c is the coefficient and W is the
 
 Then, the project of x can be calcuated as:
 
-```
-$$
-\frac{a}{b}
-$$
-```
-
-
-# My Project README
-
-This is some introductory text.
-
-Here's an important equation:
 
 $$
 \frac{a}{b}
 $$
 
-And here's some more text explaining the equation.
