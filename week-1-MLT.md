@@ -21,8 +21,8 @@ That way, the point of projection is cW, where c is the coefficient and W is the
 
 Then, the project of x can be calcuated as:
 
-
 $$
 \frac{a}{b}
 $$
+
 
