@@ -26,3 +26,16 @@ $$
 \frac{a}{b}
 $$
 ```
+
+
+# My Project README
+
+This is some introductory text.
+
+Here's an important equation:
+
+$$
+\frac{a}{b}
+$$
+
+And here's some more text explaining the equation.
