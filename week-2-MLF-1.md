@@ -1,3 +1,4 @@
+# Single Variable Functions
 ## Derivative - Defintion (First Principles)
 The formula for the **derivative** of a function $f(x)$ at a point $x^*$ is given by:
 
