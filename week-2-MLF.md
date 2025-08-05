@@ -66,3 +66,61 @@ Let's compare this to the exact value:
 Using a calculator, $0.99^7 \approx 0.932065355$
 
 As you can see, the linear approximation $0.93$ is a very good estimate for $0.99^7$.
+
+## Higher Order Approximations
+The Taylor polynomial of degree $n$ for a function $f(x)$ centered at a point $x^*$ is given by:
+
+$$P_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(x^*)}{k!}(x-x^*)^k$$
+
+Expanded, the formula is:
+
+$$P_n(x) = f(x^*) + f'(x^*)(x-x^*) + \frac{f''(x^*)}{2!}(x-x^*)^2 + \frac{f'''(x^*)}{3!}(x-x^*)^3 + \dots + \frac{f^{(n)}(x^*)}{n!}(x-x^*)^n$$
+
+### Some notes on Higher Order Approximations
+
+### Is quadratic approximation better?
+
+Quadratic approximation or higher order approximation is theoritically better. But considering the complexities, linear approximation is usually sufficient. *Most machine learning problems can be managed with linear approximations. But, there are cases where higher order approximations are better.* Below is one such case. 
+
+Approximating $1.1^7$ using a linear vs. a quadratic approximation centered at $x^*=1$ demonstrates a key advantage of higher-order approximations: improved accuracy.
+
+We can analyze this with the function $f(x) = (1+x)^7$.
+
+---
+
+This is a first-order approximation that matches the function's value and slope at the center point $x^*=1$. As derived above, the common formula used for this is:
+ $(1+x)^r \approx 1+rx$.
+
+* **Formula:** $P_1(x) \approx 1+rx$ where $x$ is the change from 1.
+* **Values:** $r=7$, $x=0.1$
+* **Approximation:** $1+7(0.1) = 1.7$
+
+This approximation is a straight line that only accounts for the initial direction of the function. It fails to account for the increasing steepness of the curve as $x$ moves away from 1.
+
+---
+
+#### 2. Quadratic Approximation ($P_2(x)$)
+
+This is a second-order approximation that adds a new term to account for the function's **concavity** or curvature. It matches the function's value, slope, and curvature at $x^*=1$.
+
+* **Formula:** $P_2(x) = f(1) + f'(1)(x-1) + \frac{f''(1)}{2!}(x-1)^2$
+* **Values:** $f(1)=1$, $f'(1)=7$, $f''(1)=42$
+* **Approximation:** $P_2(1.1) = 1 + 7(1.1-1) + \frac{42}{2}(1.1-1)^2 = 1.91$
+
+The extra term, $21(x-1)^2$, effectively "bends" the straight line into a parabola, which provides a much closer fit to the original curve of $f(x) = x^7$.
+
+---
+
+#### 3. Comparison
+
+* **Actual Value:** $1.1^7 \approx 1.9487$
+* **Linear Error:** $|1.9487 - 1.7| \approx 0.2487$
+* **Quadratic Error:** $|1.9487 - 1.91| \approx 0.0387$
+
+The quadratic approximation is better because its error is significantly smaller. It captures more information about the function's behavior (its curvature) than the linear approximation, which only captures its initial direction. As a result, the quadratic approximation stays closer to the true function value over a wider range.
+
+
+
+
+
+
