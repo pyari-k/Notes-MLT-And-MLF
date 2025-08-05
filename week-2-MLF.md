@@ -120,7 +120,143 @@ The extra term, $21(x-1)^2$, effectively "bends" the straight line into a parabo
 The quadratic approximation is better because its error is significantly smaller. It captures more information about the function's behavior (its curvature) than the linear approximation, which only captures its initial direction. As a result, the quadratic approximation stays closer to the true function value over a wider range.
 
 
+## More examples on linear approximations - using product rule and chain rule 
 
+---
 
+### Question 1
 
+1. Find an approximation for the function $f(x) = \frac{e^{3x}}{\sqrt{1+x}}$
 
+Linear approximation is built from the function's value and its derivative at a specific point, which we'll choose as $x^* = 0$ for convenience.
+
+The linear approximation formula centered at $x^*=0$ is:
+$$f(x) \approx f(0) + f'(0)(x-0)$$
+
+We need to calculate $f(0)$ and $f'(0)$.
+
+#### Step 1: Find the value of the function at $x=0$
+
+First, let's find the value of the original function at $x=0$:
+$$f(x) = \frac{e^{3x}}{\sqrt{1+x}}$$
+$$f(0) = \frac{e^{3(0)}}{\sqrt{1+0}} = \frac{e^0}{\sqrt{1}} = \frac{1}{1} = 1$$
+
+#### Step 2: Find the derivative of the function, $f'(x)$
+
+To find the derivative of $f(x)$, we must use the **quotient rule**, which states:
+$$\frac{d}{dx}\left(\frac{u}{v}\right) = \frac{u'v - uv'}{v^2}$$
+
+Here, we define our numerator and denominator and their derivatives:
+
+* **Numerator:** $u = e^{3x}$
+    To find $u'$, we use the **chain rule**. The outer function is $e^z$ and the inner function is $3x$.
+    $u' = e^{3x} \cdot (3x)' = 3e^{3x}$
+
+* **Denominator:** $v = \sqrt{1+x} = (1+x)^{1/2}$
+    To find $v'$, we use the **chain rule**. The outer function is $z^{1/2}$ and the inner function is $1+x$.
+    $v' = \frac{1}{2}(1+x)^{-1/2} \cdot (1+x)' = \frac{1}{2}(1+x)^{-1/2} \cdot 1 = \frac{1}{2\sqrt{1+x}}$
+
+Now, substitute these components into the quotient rule formula:
+$$f'(x) = \frac{(3e^{3x})(\sqrt{1+x}) - (e^{3x})\left(\frac{1}{2\sqrt{1+x}}\right)}{(\sqrt{1+x})^2}$$
+
+To simplify, let's find a common denominator in the numerator:
+$$f'(x) = \frac{\frac{3e^{3x}\sqrt{1+x} \cdot 2\sqrt{1+x}}{2\sqrt{1+x}} - \frac{e^{3x}}{2\sqrt{1+x}}}{1+x}$$
+$$f'(x) = \frac{\frac{6e^{3x}(1+x) - e^{3x}}{2\sqrt{1+x}}}{1+x} = \frac{6e^{3x}(1+x) - e^{3x}}{2(1+x)^{3/2}}$$
+
+#### Step 3: Evaluate the derivative at $x=0$
+
+Now we find the value of the derivative at $x=0$:
+$$f'(0) = \frac{6e^{3(0)}(1+0) - e^{3(0)}}{2(1+0)^{3/2}} = \frac{6(1)(1) - 1}{2(1)^{3/2}} = \frac{6-1}{2} = \frac{5}{2}$$
+
+### Step 4: Construct the linear approximation
+
+Finally, we plug the values $f(0)=1$ and $f'(0)=\frac{5}{2}$ into the linear approximation formula:
+$$f(x) \approx f(0) + f'(0)x$$
+$$f(x) \approx 1 + \frac{5}{2}x$$
+
+This linear approximation, $L(x) = 1 + \frac{5}{2}x$, provides a good estimate for the original function $f(x) = \frac{e^{3x}}{\sqrt{1+x}}$ for values of $x$ close to 0. For example, to approximate $f(0.1)$, we can use:
+$$f(0.1) \approx 1 + \frac{5}{2}(0.1) = 1 + 2.5(0.1) = 1 + 0.25 = 1.25$$
+The actual value is $f(0.1) \approx 1.259...$, showing our approximation is quite close.
+
+---
+
+**Note:** This linear approximation, $L(x) = 1 + \frac{5}{2}x$, provides a good estimate for the original function $f(x) = \frac{e^{3x}}{\sqrt{1+x}}$ for values of $x$ close to 0. For example, to approximate $f(0.1)$, we can use:
+$$f(0.1) \approx 1 + \frac{5}{2}(0.1) = 1 + 2.5(0.1) = 1 + 0.25 = 1.25$$
+The actual value is $f(0.1) \approx 1.259...$, showing our approximation is quite close.
+
+---
+
+### Question 2
+
+2. Find the linear approximation of the function $f(x) = e^{\sqrt{1+x}}$ around the point $x=1$
+
+We use the formula:
+$$L(x) = f(x^*) + f'(x^*)(x-x^*)$$
+In this case, $x^*=1$.
+
+### Step 1: Find the value of the function and its derivative at $x=1$
+
+* **Function value at $x=1$:**
+    $$f(1) = e^{\sqrt{1+1}} = e^{\sqrt{2}}$$
+    The numerical value is approximately $4.113$.
+
+* **Derivative of the function:**
+    We use the chain rule to find the derivative of $f(x)$. The outer function is $e^u$ and the inner function is $u = \sqrt{1+x}$.
+    $$f'(x) = \frac{d}{dx}\left(e^{\sqrt{1+x}}\right) = e^{\sqrt{1+x}} \cdot \frac{d}{dx}(\sqrt{1+x})$$
+    $$f'(x) = e^{\sqrt{1+x}} \cdot \frac{1}{2\sqrt{1+x}} = \frac{e^{\sqrt{1+x}}}{2\sqrt{1+x}}$$
+
+* **Derivative value at $x=1$:**
+    $$f'(1) = \frac{e^{\sqrt{1+1}}}{2\sqrt{1+1}} = \frac{e^{\sqrt{2}}}{2\sqrt{2}}$$
+    The numerical value is approximately $1.454$.
+
+### Step 2: Construct the linear approximation
+
+Now, we substitute the values we found into the linear approximation formula:
+$$L(x) = f(1) + f'(1)(x-1)$$
+$$L(x) = e^{\sqrt{2}} + \frac{e^{\sqrt{2}}}{2\sqrt{2}}(x-1)$$
+
+Using the numerical values we calculated, the linear approximation can be written as:
+$$L(x) \approx 4.113 + 1.454(x-1)$$
+
+### Critical Points of Single-Variable Functions
+
+A **critical point** of a single-variable function $f(x)$ is a point $c$ in the domain where the function's derivative is either zero or undefined. These are the only points where a local maximum, local minimum, or a saddle point can occur.
+
+#### Types of Critical Points
+
+The type of critical point is determined by analyzing the sign of the first derivative, $f'(x)$, on either side of the point.
+
+* **Local Maximum:**
+    The critical point $c$ is a local maximum if the derivative $f'(x)$ changes sign from **positive to negative** as $x$ increases through $c$. This means the function is **increasing** before $c$ and **decreasing** after it.
+
+* **Local Minimum:**
+    The critical point $c$ is a local minimum if the derivative $f'(x)$ changes sign from **negative to positive** as $x$ increases through $c$. This means the function is **decreasing** before $c$ and **increasing** after it.
+
+* **Saddle Point (or horizontal inflection point):**
+    The critical point $c$ is a saddle point if the derivative $f'(x)$ **does not change sign** as $x$ passes through $c$. This means the function is either increasing on both sides of $c$ or decreasing on both sides.
+
+### Examples
+
+* **Local Maximum:**
+    Consider the function $f(x) = -x^2$.
+    * $f'(x) = -2x$.
+    * The critical point is at $x=0$.
+    * For $x < 0$, $f'(x) > 0$ (increasing).
+    * For $x > 0$, $f'(x) < 0$ (decreasing).
+    * Since the sign of the derivative changes from **+ to -**, $x=0$ is a **local maximum**.
+
+* **Local Minimum:**
+    Consider the function $f(x) = x^2$.
+    * $f'(x) = 2x$.
+    * The critical point is at $x=0$.
+    * For $x < 0$, $f'(x) < 0$ (decreasing).
+    * For $x > 0$, $f'(x) > 0$ (increasing).
+    * Since the sign of the derivative changes from **- to +**, $x=0$ is a **local minimum**.
+
+* **Saddle Point:**
+    Consider the function $f(x) = x^3$.
+    * $f'(x) = 3x^2$.
+    * The critical point is at $x=0$.
+    * For $x < 0$, $f'(x) > 0$ (increasing).
+    * For $x > 0$, $f'(x) > 0$ (increasing).
+    * Since the sign of the derivative **does not change**, $x=0$ is a **saddle point**.
