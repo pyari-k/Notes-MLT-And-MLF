@@ -127,3 +127,40 @@ Now, divide the gradient vector by its magnitude to get the unit vector, $\vec{u
 $$ \vec{u} = \frac{\nabla f(1,1,1)}{\|\nabla f(1,1,1)\|} = \frac{1}{\sqrt{29}} \begin{bmatrix} 2 \\ 3 \\ 4 \end{bmatrix} = \begin{bmatrix} \frac{2}{\sqrt{29}} \\ \frac{3}{\sqrt{29}} \\ \frac{4}{\sqrt{29}} \end{bmatrix} $$
 
 The direction of steepest ascent for the function $f(x,y,z)$ at the point $(1,1,1)$ is the unit vector $\left\langle \frac{2}{\sqrt{29}}, \frac{3}{\sqrt{29}}, \frac{4}{\sqrt{29}} \right\rangle$.
+
+---
+
+### Question and Answer: Linear Approximation
+
+**Question:**
+What is the approximate value of $\sqrt{9.1}$ up to 4 decimal places? Use linear approximation.
+
+---
+
+**Answer:**
+To find the approximate value of $\sqrt{9.1}$ using linear approximation, we use the formula:
+$$L(x) = f(a) + f'(a)(x-a)$$
+
+**1. Define the function and choose a point:**
+* Let the function be $f(x) = \sqrt{x}$.
+* The closest point with a known square root is $a=9$.
+* The value we want to approximate is $x = 9.1$.
+
+**2. Calculate $f(a)$ and $f'(a)$:**
+* **Function value:**
+    $$f(9) = \sqrt{9} = 3$$
+* **Derivative:**
+    $$f'(x) = \frac{1}{2\sqrt{x}}$$
+* **Derivative value at $a=9$:**
+    $$f'(9) = \frac{1}{2\sqrt{9}} = \frac{1}{2(3)} = \frac{1}{6}$$
+
+**3. Substitute the values into the formula:**
+$$L(9.1) = 3 + \frac{1}{6}(9.1 - 9)$$
+$$L(9.1) = 3 + \frac{1}{6}(0.1)$$
+$$L(9.1) = 3 + \frac{0.1}{6}$$
+
+**4. Calculate and round the final value:**
+$$L(9.1) \approx 3 + 0.0166666...$$
+$$L(9.1) \approx 3.0166666...$$
+
+Rounding to four decimal places, the approximate value is **3.0167**.

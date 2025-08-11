@@ -58,6 +58,29 @@ Where:
 
 In simpler terms, the directional derivative is the dot product of the gradient vector and the unit direction vector.
 
-### Notes
+### Some Notes
 Steepest Ascend - means gradient
+Steepest Descend - is the negative of the gradient
 Direction of Steepest Ascend - means the unit vector in the direction of the gradient 
+
+### Cauchy-Schwarz Inequality
+
+The Cauchy-Schwarz inequality states that for any two vectors $\vec{u}$ and $\vec{v}$ in an inner product space, the absolute value of their inner product is less than or equal to the product of their norms.
+
+$$|\vec{u} \cdot \vec{v}| \leq \|\vec{u}\| \|\vec{v}\|$$
+
+**Proof using the geometric definition of the dot product**
+
+The dot product of two vectors $\vec{u}$ and $\vec{v}$ is related to the angle $\theta$ between them by the formula:
+$$ \vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos\theta $$
+Taking the absolute value of both sides, we get:
+$$ |\vec{u} \cdot \vec{v}| = |\|\vec{u}\| \|\vec{v}\| \cos\theta| $$
+Since the norms $\|\vec{u}\|$ and $\|\vec{v}\|$ are always non-negative, we can simplify this to:
+$$ |\vec{u} \cdot \vec{v}| = \|\vec{u}\| \|\vec{v}\| |\cos\theta| $$
+The cosine of any angle $\theta$ has a magnitude that is always less than or equal to 1. That is:
+$$ |\cos\theta| \leq 1 $$
+Multiplying both sides of this inequality by $\|\vec{u}\| \|\vec{v}\|$, we obtain:
+$$ \|\vec{u}\| \|\vec{v}\| |\cos\theta| \leq \|\vec{u}\| \|\vec{v}\| $$
+Substituting the left side of this inequality with its equivalent, $|\vec{u} \cdot \vec{v}|$, we arrive at the Cauchy-Schwarz inequality:
+$$ |\vec{u} \cdot \vec{v}| \leq \|\vec{u}\| \|\vec{v}\| $$
+The equality holds if and only if $|\cos\theta| = 1$, which means the angle $\theta$ is $0$ or $\pi$. This implies that the vectors $\vec{u}$ and $\vec{v}$ are collinear (one is a scalar multiple of the other).
