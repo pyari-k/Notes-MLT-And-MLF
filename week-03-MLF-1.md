@@ -124,6 +124,66 @@ The left null space of $A$ is the span of the vector $\begin{bmatrix} -3 \\ 1 \e
 
 ## Summary - 4 fundamental subspaces
 (a) column space
-(b) null space 
-(c) row space 
+
+(b) null space
+
+(c) row space
+
 (d) left null space 
+
+---
+Relationships between the fundamental subspaces
+1. Null space and the rowspace are orthogonal subspaces
+2. The left null space and column spaces are also orthogonal subspaces 
+
+---
+
+### Some notes:
+### Consistent Systems of Equations
+
+A system of linear equations, $Ax = b$, has a solution **if and only if** the vector $b$ lies within the **column space of A**, denoted as $Col(A)$.
+
+This means that $b$ can be expressed as a linear combination of the columns of matrix A.
+
+---
+
+### Problem on rowspace
+
+# Problem: Finding the Row Space
+
+Find the row space of the matrix:
+$A = \begin{bmatrix} 2 & 4 & 6 & 8 \\ 1 & 3 & 0 & 5 \\ 1 & 1 & 6 & 3 \end{bmatrix}$
+
+---
+
+# Solution
+
+To find the row space of a matrix, we use Gaussian elimination to transform the matrix into its row echelon form. The non-zero rows of the row echelon form will then form a basis for the row space.
+
+The given matrix is:
+$A = \begin{bmatrix} 2 & 4 & 6 & 8 \\ 1 & 3 & 0 & 5 \\ 1 & 1 & 6 & 3 \end{bmatrix}$
+
+**Step 1: Perform row operations to get to row echelon form.**
+
+Swap $R_1$ and $R_2$ to get a leading 1:
+$\begin{bmatrix} 1 & 3 & 0 & 5 \\ 2 & 4 & 6 & 8 \\ 1 & 1 & 6 & 3 \end{bmatrix}$
+
+Eliminate the elements below the leading 1 in the first column ($R_2 \to R_2 - 2R_1$ and $R_3 \to R_3 - R_1$):
+$\begin{bmatrix} 1 & 3 & 0 & 5 \\ 0 & -2 & 6 & -2 \\ 0 & -2 & 6 & -2 \end{bmatrix}$
+
+Make the leading element in the second row a 1 ($R_2 \to -\frac{1}{2}R_2$):
+$\begin{bmatrix} 1 & 3 & 0 & 5 \\ 0 & 1 & -3 & 1 \\ 0 & -2 & 6 & -2 \end{bmatrix}$
+
+Eliminate the element below the new leading 1 in the second column ($R_3 \to R_3 + 2R_2$):
+$\begin{bmatrix} 1 & 3 & 0 & 5 \\ 0 & 1 & -3 & 1 \\ 0 & 0 & 0 & 0 \end{bmatrix}$
+
+**Step 2: Identify the basis for the row space.**
+
+The non-zero rows in the final row echelon form are the basis vectors for the row space.
+
+The non-zero rows are:
+$v_1 = \begin{bmatrix} 1 & 3 & 0 & 5 \end{bmatrix}$
+$v_2 = \begin{bmatrix} 0 & 1 & -3 & 1 \end{bmatrix}$
+
+The **row space** of the matrix is the span of these vectors, and a basis for the row space is:
+$\text{Basis} = \{ \begin{bmatrix} 1 & 3 & 0 & 5 \end{bmatrix}, \begin{bmatrix} 0 & 1 & -3 & 1 \end{bmatrix} \}$

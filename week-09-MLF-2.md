@@ -37,3 +37,7 @@ If $C$ is a convex set, then scaling it by a positive scalar $\alpha > 0$ or tra
 * **Translation:** $C + \mathbf{v} = \{\mathbf{x} + \mathbf{v} \mid \mathbf{x} \in C\}$
 
 The proof for both follows a similar logic to the intersection proof, by applying the transformation to the convex combination of two points and showing the resulting point remains in the new set.
+
+
+#### 4. Solutions to linear system of equations
+Solutions to linear system of equations are convex sets 
